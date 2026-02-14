@@ -47,26 +47,19 @@
 
 ## 📸 Screenshots
 
-### 🏠 Register
-![Dashboard Screenshot](screenshots/register.png)
+<p align="center">
+  <img src="screenshots/register.png" width="23%">
+  <img src="screenshots/login.png" width="23%">
+  <img src="screenshots/dashboard.png" width="23%">
+  <img src="screenshots/interview_setup.png" width="23%">
+</p>
 
-### 🏠 Login
-![Dashboard Screenshot](screenshots/login.png)
+<p align="center">
+  <img src="screenshots/interview.png" width="23%">
+  <img src="screenshots/result.png" width="23%">
+  <img src="screenshots/history.png" width="23%">
+</p>
 
-### 🏠 Dashboard
-![Dashboard Screenshot](screenshots/dashboard.png)
-
-### 🎤 Interview Setup
-![Interview Screenshot](screenshots/interview_setup.png)
-
-### 🎤 Interview Session
-![Interview Screenshot](screenshots/interview.png)
-
-### 📊 Results & Feedback
-![Results Screenshot](screenshots/result.png)
-
-### 📈 Interview History
-![History Screenshot](screenshots/history.png)
 
 ## 📦 Installation
 
