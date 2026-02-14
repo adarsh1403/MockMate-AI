@@ -15,6 +15,10 @@
 
 🚀 [Live App](https://mockmate-ai-n7mx.onrender.com)
 
+## 🎥 Video Demo
+
+[▶ Click here to watch the demo](https://youtu.be/CFEy92lewEw)
+
 ## 🚀 Features
 
 -   **Dynamic Question Generation**: AI generates unique questions for every session based on your chosen field (DevOps, AI/ML, Full Stack, etc.) and difficulty.
