@@ -47,14 +47,23 @@
 
 ## 📸 Screenshots
 
+### 🏠 Register
+![Dashboard Screenshot](screenshots/register.png)
+
+### 🏠 Login
+![Dashboard Screenshot](screenshots/login.png)
+
 ### 🏠 Dashboard
 ![Dashboard Screenshot](screenshots/dashboard.png)
+
+### 🎤 Interview Setup
+![Interview Screenshot](screenshots/interview_setup.png)
 
 ### 🎤 Interview Session
 ![Interview Screenshot](screenshots/interview.png)
 
 ### 📊 Results & Feedback
-![Results Screenshot](screenshots/results.png)
+![Results Screenshot](screenshots/result.png)
 
 ### 📈 Interview History
 ![History Screenshot](screenshots/history.png)
