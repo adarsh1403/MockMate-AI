@@ -3,6 +3,13 @@
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![Flask](https://img.shields.io/badge/flask-3.1.2-green)
+![Auth](https://img.shields.io/badge/auth-Flask--Login-orange)
+![Database](https://img.shields.io/badge/database-SQLite-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
+![AI Powered](https://img.shields.io/badge/AI-Powered-purple)
+![Deployed on Vercel](https://img.shields.io/badge/deployed-vercel-black)
+
+
 
 **MockMate AI** is an intelligent interview preparation platform that uses Large Language Models (LLMs) to conduct realistic mock interviews. It generates tailored questions based on your field and difficulty level, evaluates your answers, and provides detailed feedback.
 
@@ -26,8 +33,8 @@
 
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/YOUR_USERNAME/AI-Interview.git
-    cd AI-Interview
+    git clone https://github.com/adarsh1403/MockMate-AI.git
+    cd MockMate-AI
     ```
 
 2.  **Create a virtual environment**:
