@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block title %}MockMate AI - Dashboard{% endblock %}
+
+{% block content %}
+<!-- 
+    Dashboard Page Configuration
+    This page extends 'base.html' which handles the common layout (Navbar, Footer, Fonts).
+    Content Block: Contains the specific dashboard widgets.
+-->
+
+<div class="mb-12 text-center">
+    <h1 class="text-3xl font-display font-bold text-gray-900 dark:text-white">
+        Welcome back, {{ user.name|default('User') }} <span class="inline-block animate-pulse">👋</span>
+    </h1>
+    <p class="mt-2 text-gray-600 dark:text-gray-400">Ready to ace your next technical interview?</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+    <!-- Start Interview Card -->
+    <!-- Used to trigger the setup form -->
+    <div class="group relative bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-xl border border-gray-200 dark:border-gray-700 p-8 transition-all duration-300 overflow-hidden cursor-pointer h-full flex flex-col justify-center items-center text-center"
+        onclick="document.getElementById('setup-form').classList.remove('hidden'); document.getElementById('setup-form').scrollIntoView({behavior: 'smooth'})">
+        <div
+            class="absolute top-0 right-0 -mt-4 -mr-4 w-32 h-32 bg-teal-500/10 rounded-full blur-xl group-hover:bg-teal-500/20 transition-all">
+        </div>
+        <div class="relative z-10 flex flex-col items-center">
+            <div
+                class="w-16 h-16 bg-teal-500/10 dark:bg-teal-500/20 rounded-xl flex items-center justify-center mb-6 text-teal-600 dark:text-teal-400 transform group-hover:scale-110 transition-transform duration-300">
+                <span class="material-symbols-outlined text-4xl">play_arrow</span>
+            </div>
+            <h3
+                class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                Start New Interview</h3>
+            <p class="text-gray-500 dark:text-gray-400 mb-6 max-w-xs">Launch a new AI-driven mock interview session
+                tailored to your role.</p>
+            <span
+                class="text-teal-600 dark:text-teal-400 font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                Configure <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </span>
+        </div>
+    </div>
+
+    <!-- History Card -->
+    <a href="{{ url_for('history') }}"
+        class="group relative bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-xl border border-gray-200 dark:border-gray-700 p-8 transition-all duration-300 overflow-hidden h-full flex flex-col justify-center items-center text-center">
+        <div
+            class="absolute top-0 right-0 -mt-4 -mr-4 w-32 h-32 bg-primary/10 rounded-full blur-xl group-hover:bg-primary/20 transition-all">
+        </div>
+        <div class="relative z-10 flex flex-col items-center">
+            <div
+                class="w-16 h-16 bg-primary/10 dark:bg-primary/20 rounded-xl flex items-center justify-center mb-6 text-primary transform group-hover:scale-110 transition-transform duration-300">
+                <span class="material-symbols-outlined text-4xl">history</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
+                View Interview History</h3>
+            <p class="text-gray-500 dark:text-gray-400 mb-6 max-w-xs">Review past performance, feedback scores, and
+                areas for improvement.</p>
+            <span class="text-primary font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                Check Records <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </span>
+        </div>
+    </a>
+</div>
+
+<!-- Setup Form (Hidden by default) -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-lg border border-primary/20 dark:border-primary/20 p-6 sm:p-8 hidden relative overflow-hidden ring-1 ring-primary/10 mt-8 max-w-4xl mx-auto"
+    id="setup-form">
+    <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+    <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xl font-bold font-display text-gray-900 dark:text-white flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">tune</span>
+            Interview Setup
+        </h2>
+        <button class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
+            onclick="document.getElementById('setup-form').classList.add('hidden')">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+
+    <!-- Form submits to the interview route -->
+    <form method="POST" class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" for="field">Field</label>
+                <div class="relative">
+                    <select
+                        class="block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-surface-dark dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5 appearance-none"
+                        id="field" name="field" required>
+                        <option value="Full Stack Development">Full Stack Development</option>
+                        <option value="Artificial Intelligence and Machine Learning">AI/ML</option>
+                        <option value="DevOps">DevOps</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="Cyber Security">Cyber Security</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                        <span class="material-symbols-outlined text-sm">expand_more</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    for="difficulty">Difficulty</label>
+                <div class="relative">
+                    <select
+                        class="block w-full rounded-lg border-gray-300 dark:border-gray-600 dark:bg-surface-dark dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm py-2.5 appearance-none"
+                        id="difficulty" name="difficulty" required>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                        <span class="material-symbols-outlined text-sm">expand_more</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-4 flex justify-end">
+            <button
+                class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 border border-transparent text-sm font-bold rounded-lg shadow-md text-white bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all transform hover:-translate-y-0.5"
+                type="submit">
+                <span class="material-symbols-outlined mr-2">play_circle</span>
+                Begin Interview
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}
